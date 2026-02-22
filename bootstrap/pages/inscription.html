@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Les Ecuries de Reiningue - Demande d'inscription</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="text-secondary bg-light">
+	
+	<!-- ! MENU -->
+	<header>
+		<nav class="navbar navbar-expand-lg shadow-sm mb-3 bg-warning-subtle py-2">
+			<div class="container">
+				<a class="navbar-brand fw-bold text-success" href="../index.html"><img src="../images/logo.png" alt="logoEcuriesReiningue"></a>
+				<div class="navbar-nav ms-auto fw-bold"> 
+					<a class="nav-link" href="../index.html" >Accueil</a> <!-- "active" : lien actif -->
+					<a class="nav-link" href="activites.html">Activités</a>
+					<a class="nav-link" href="horaires-tarifs.html">Horaires & Tarifs</a>
+					<a class="nav-link active text-success fw-semibold" aria-current="page" href="#">Inscription</a>
+					<a class="nav-link" href="https://www.ffe.com/" target="_blank" rel="noopener">FFE officiel</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main>
+
+		<!-- ! CONTAINER PRINCIPAL -->
+		<div class="container mb-5">
+
+			<!-- ! TITRE -->
+			<div class="row">
+				<div class="col-12 text-center">
+					<h1 class="text-success mb-4">Demande d'inscription</h1>
+				</div>
+			</div>
+
+			<!-- ! PRESENTATION -->
+			<div class="row">
+				<div class="col-12 col-md-10 offset-md-1">
+					<p class="fw-bold text-danger">Ce formulaire est proposé à titre pédagogique dans le cadre d’un exercice de développement web. Les informations saisies ne sont pas réellement enregistrées ni traitées par les &Eacute;curies de Reiningue. Il s’agit d’une simulation destinée à illustrer le fonctionnement d’un formulaire en ligne.</p>
+				</div>
+			</div>
+
+			<!-- ! FORMULAIRE -->
+			<form>
+				<div class="row g-3 align-items-center">
+					<div class="col-12 col-md-3 text-start text-md-end mt-2"><label for="nom" class="fw-bold">Nom</label></div>
+					<div class="col-12 col-md-7"><input type="text" id="nom" name="nom" placeholder="Votre nom" class="form-control mb-3" required></div>
+					<div class="col-12 col-md-3 text-start text-md-end mt-2"><label for="prenom" class="fw-bold">Prénom</label></div>
+					<div class="col-12 col-md-7"><input type="text" id="prenom" name="prenom" placeholder="Votre prénom" class="form-control mb-3" required></div>
+					<div class="col-12 col-md-3 text-start text-md-end mt-2"><label for="email" class="fw-bold">Adresse email</label></div>
+					<div class="col-12 col-md-7"><input type="email" id="email" name="email" placeholder="Votre email" class="form-control mb-3" required></div>
+					<div class="col-12 col-md-3 text-start text-md-end mt-2"><label for="abonnement" class="fw-bold">Abonnement</label></div>
+					<div class="col-12 col-md-7 mb-3"><select id="abonnement" name="abonnement" class="form-select"><option selected disabled>Choisissez une formule</option><option value="formbaby">Baby poney</option><option value="formlois">Forfait Loisir</option><option value="formprog">Forfait Progression</option><option value="formcomp">Forfait Compétition</option></select></div>
+					<div class="col-12 col-md-3 text-start text-md-end mt-2"><label for="objectif" class="fw-bold">Objectif sportif</label></div>
+					<div class="col-12 col-md-7 mb-3"><textarea id="objectif" name="objectif" rows="3" placeholder="Décrivez votre objectif" class="form-control" ></textarea></div>
+					<div class="col-12 col-md-3 text-start text-md-end mt-2"><label for="disponibilites" class="fw-bold">Disponibilités</label></div>
+					<div class="col-12 col-md-7"><input type="text" id="disponibilites" name="disponibilites" placeholder="Ex : mercredi après-midi, samedi matin" class="form-control"></div>
+					<div class="col-12 col-md-3 text-start text-md-end"></div>
+					<div class="col-12 col-md-7"><button type="submit" class="btn btn-outline-primary btn-lg m-3">Envoyer la demande</button></div>
+				</div>
+			</form>
+		</div>
+	</main>
+
+	<!-- ! FOOTER -->
+	<footer class="bg-warning-subtle mt-5 py-4 border-top">
+		<div class="container text-center">
+			<h5 class="fw-bold text-success mb-3">Écuries de Reiningue</h5>
+			<p class="mb-2 small">123 Route de Schweighouse • 68950 Reiningue<br>📞 03 89 56 65 56 • ✉ ppelerin@gmail.com</p>
+			<div class="mb-3">
+				<a href="../index.html" class="text-decoration-none mx-2">Accueil</a>
+				<a href="activites.html" class="text-decoration-none mx-2">Activités</a>
+				<a href="horaires-tarifs.html" class="text-decoration-none mx-2">Horaires & Tarifs</a>
+				<a href="inscription.html" class="text-decoration-none mx-2">Inscription</a>
+			</div>
+			<p class="small text-muted mb-2"><span class="fw-bold">© 2026 Pierre PELERIN</span> — Site réalisé à titre pédagogique</p>
+			<p class="text-danger fw-bold">"Les Écuries de Reiningue" est un établissement entièrement fictif, créé dans le cadre d’un exercice pédagogique afin d’illustrer la réalisation d’un site web avec Bootstrap, sans aucune utilisation de CSS personnalisé.</p>
+		</div>
+	</footer>
+</body>
+</html>

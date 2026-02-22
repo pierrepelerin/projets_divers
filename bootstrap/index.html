@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Les Ecuries de Reiningue - Accueil</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> <!-- Lien pour Bootstrap -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"> <!-- Lien pour icônes Bootstrap -->
+</head>
+<body class="bg-light">
+
+	<!-- ! MENU -->
+	<header>
+		<nav class="navbar navbar-expand-lg shadow-sm mb-3 bg-warning-subtle py-2"> <!-- "navbar" active le composant, "navbar-expand-lg" : horizontal à partir de lg -->
+			<div class="container">
+				<a class="navbar-brand fw-bold text-success" href="#"><img src="images/logo.png" alt="logoEcuriesReiningue"></a>
+				<div class="navbar-nav ms-auto fw-bold"> <!-- "ms-auto" : pousse les liens à droite -->
+					<a class="nav-link active text-success fw-semibold" href="#" aria-current="page">Accueil</a> <!-- "active" : lien actif -->
+					<a class="nav-link" href="pages/activites.html">Activités</a>
+					<a class="nav-link" href="pages/horaires-tarifs.html">Horaires & Tarifs</a>
+					<a class="nav-link" href="pages/inscription.html">Inscription</a>
+					<a class="nav-link" href="https://www.ffe.com/" target="_blank" rel="noopener">FFE officiel</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- ! CONTAINER PRINCIPAL -->
+	<main>
+		<div class="container">
+
+			<!-- ! TITRE -->
+			<div class="row">
+				<div class="col-12 text-center">
+					<h1 class="text-success">Les écuries de Reiningue</h1>
+				</div>
+			</div>
+
+			<!-- ! SLOGAN -->
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-2 text-center">
+					<h2 class="mb-4 fst-italic fs-5 text-secondary">Passion, progression, complicité</h2>
+				</div>
+			</div>
+
+			<!-- ! IMAGE -->
+			<div class="row">
+				<div class="col-12 col-md-8 offset-md-2">
+					<img src="images/club.png" class="img-fluid mt-4 mb-4 rounded-4 shadow border border-dark" alt="Ecurie Muringer" loading="lazy"> <!-- "fluid" : pour s'adapter à l'élément parent, "lazy" : charge l'image uniquement quand elle est visible à l'écran -->
+				</div>
+			</div>
+
+			<!-- ! CARTES -->
+			<div class="row align-items-stretch g-3">
+
+				<!-- ! CARTE 1 -->
+				<div class="col-12 col-md-6 d-flex flex-column gap-3">
+					<div class="card shadow-sm flex-grow-1">
+						<div class="card-body">
+							<h3 class="h5 text-secondary fw-bold mb-3"><i class="bi bi-heart-fill me-2 text-danger"></i>Notre philosophie</h3>
+							<p class="text-secondary card-text lh-lg">Située à Reiningue, au cœur d’un environnement naturel privilégié, les &Eacute;curies de Reiningue accueillent cavaliers débutants comme confirmés dans une structure conviviale et professionnelle. Le club propose des cours adaptés à tous les âges et à tous les niveaux, du loisir à la préparation aux compétitions. <br>Les installations comprennent carrière, espaces de travail sécurisés et infrastructures pensées pour le confort des chevaux comme des cavaliers. <br>L’encadrement pédagogique met l’accent sur la progression technique, la confiance en soi et le respect du cheval, dans un cadre structuré et bienveillant.</p>
+						</div>
+					</div>
+					<div class="card shadow-sm">
+						<div class="card-body">
+							<h3 class="h5 fw-bold mb-3 text-secondary"><i class="bi bi-award me-2 text-secondary"></i>Notre enseignement</h3>
+							<p class="text-secondary card-text lh-lg">Aux &Eacute;curies de Reiningue...</p>
+						</div>
+						<div class="card-footer bg-transparent border-0">
+							<a href="pages/activites.html" class="btn btn-outline-success w-100">Voir les activités</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- ! CARTE 2 -->
+				<div class="col-12 col-md-6 d-flex flex-column gap-3">
+					<div class="card shadow-sm flex-grow-1">
+						<div class="card-body">
+							<h3 class="h5 text-secondary fw-bold mb-3"><i class="bi bi-people-fill me-2 text-danger"></i>Une ambiance conviviale</h3>
+							<p class="text-secondary card-text lh-lg">Aux &Eacute;curies de Reiningue, l’ambiance est familiale et chaleureuse. Ici, on apprend à monter à cheval, mais aussi à comprendre l’animal, à développer la patience, l’autonomie et l’esprit d’équipe. Le respect du cheval est une priorité : bien-être, écoute et travail dans le calme sont au cœur de l’enseignement. <br>Le club valorise l’entraide entre cavaliers, la transmission de la passion et le plaisir de partager des moments forts, que ce soit lors des cours, des stages ou des événements.</p>
+						</div>
+					</div>
+					<div class="card shadow-sm">
+						<div class="card-body">
+							<h3 class="h5 fw-bold mb-3 text-secondary"><i class="bi bi-award me-2 text-secondary"></i>La vie au club</h3>
+							<p class="text-secondary card-text lh-lg">Aux &Eacute;curies de Reiningue...</p>
+						</div>
+						<div class="card-footer bg-transparent border-0">
+							<a href="pages/inscription.html" class="btn btn-success w-100">S'inscrire au club</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- ! LISTE DES ACTIVITES -->
+			<div class="row mt-4">
+				<div class="col-12 col-md-8 offset-md-2 mb-5">
+					<ul class="list-group p-3 bg-white rounded-4 shadow-sm">
+						<li class="list-group-item text-secondary fw-bold small">Cours collectifs et particuliers (enfants, ados, adultes)</li>
+						<li class="list-group-item text-secondary fw-bold small">Initiation poney et préparation aux Galops</li>
+						<li class="list-group-item text-secondary fw-bold small">Stages pendant les vacances scolaires</li>
+						<li class="list-group-item text-secondary fw-bold small">Accompagnement et préparation aux compétitions</li>
+						<li class="list-group-item text-secondary fw-bold small">Travail sur le plat et à l’obstacle</li>
+						<li class="list-group-item text-secondary fw-bold small">Balades et activités de découverte</li>
+						<li class="list-group-item text-secondary fw-bold small">Pension pré ou box</li>
+						<li class="list-group-item text-secondary fw-bold small">Travail et valorisation des chevaux</li>
+						<li class="list-group-item text-secondary fw-bold small">Organisation d’événements et moments conviviaux</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<!-- ! FOOTER -->
+	<footer class="bg-warning-subtle mt-5 py-4 border-top">
+		<div class="container text-center">
+			<h5 class="fw-bold text-success mb-3">Écuries de Reiningue</h5>
+			<p class="mb-2 small">123 Route de Schweighouse • 68950 Reiningue<br>📞 03 89 56 65 56 • ✉ ppelerin@gmail.com</p>
+			<div class="mb-3">
+				<a href="index.html" class="text-decoration-none mx-2">Accueil</a>
+				<a href="pages/activites.html" class="text-decoration-none mx-2">Activités</a>
+				<a href="pages/horaires-tarifs.html" class="text-decoration-none mx-2">Horaires & Tarifs</a>
+				<a href="pages/inscription.html" class="text-decoration-none mx-2">Inscription</a>
+			</div>
+			<p class="small text-muted mb-2"><span class="fw-bold">© 2026 Pierre PELERIN</span> — Site réalisé à titre pédagogique</p>
+			<p class="text-danger fw-bold">"Les Écuries de Reiningue" est un établissement entièrement fictif, créé dans le cadre d’un exercice pédagogique afin d’illustrer la réalisation d’un site web avec Bootstrap, sans aucune utilisation de CSS personnalisé.</p>
+		</div>
+	</footer>
+</body>
+</html>
