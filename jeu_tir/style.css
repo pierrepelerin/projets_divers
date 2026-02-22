@@ -1,0 +1,179 @@
+/* ! GENERAL */
+
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: 'VT323', monospace;
+}
+
+body {
+	background-color : rgb(59, 59, 59);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ! ECRAN DE NOUVELLE PARTIE */
+
+#nouvellePartie {
+	width: 800px;
+	height: 330px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); /* Pour centrer l'élément sur la page */
+	margin: 0 auto;
+	background-color: #0033BB; /* Couleur "Blue Screen of the Death */
+	color: white;
+	border: solid 2px black;
+	text-align: center;
+}
+
+#btnCommencer {
+	width: 80px;
+	height: 30px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+
+/* ! PANNEAU DES SCORES EN HAUT DE L'ECRAN */
+
+#scores {
+	width: 400px;
+	height: 60px;
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translate(-50%, 0); /* Pour centrer horizontalement l'élément sur la page */
+	margin: 0 auto;
+	background-color: rgb(204, 204, 204);
+	border: solid 2px black;
+}
+
+#tableauScores {
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+}
+
+#tableauScores td {
+	width: 50%;
+}
+
+/* ! SCENE DE JEU */
+
+#sceneJeu {
+	width: 1200px;
+	height: 600px;
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	transform: translate(-50%, 0); /* Pour centrer horizontalement l'élément sur la page */
+	margin: 0 auto;
+	background-color: #1F1F1F; /* Couleur fond dark VSCode */
+	border: solid 20px black;
+	cursor: crosshair; /* Avoir le pointeur de la souris en forme de "viseur" */
+	color: rgb(201, 201, 160); 
+	font-family: 'Fira Code', monospace; /* Code type informatique" */
+	font-size: 10px;
+	overflow: hidden; /* Si des éléments dépassent de l'élément, ils ne seront pas affichés */
+}
+
+#sceneJeu p {
+	margin: 10px;
+}
+
+
+/* ! CIBLE = CAFARD */
+
+/* ETAT INITIAL */
+.target {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background: url("cafard.png") center no-repeat;
+	background-size: contain; /* L'image de fond est entièrement visible est redimensionnée pour tenir dans la div */
+	opacity: 1; /* Visible PAR DEFAUT */
+	transform: scale(1) rotate(0deg); /* Taille normale et pas de rotation PAR DEFAUT */
+}
+
+/* ANIMATION D'APPARITION */
+.target.appear{ animation: affichageCible 0.25s ease-out; } /* Joue l'animation "affichageCible", d'une durée de 0.25s, démarre vite et ralentit à la fin */
+
+/* ANIMATION D'APPARITION - AFFICHAGECIBLE */
+@keyframes affichageCible {
+	0%   { opacity: 0; transform: scale(0.3) rotate(-20deg); } /* Au départ */
+	70%  { opacity: 1; transform: scale(1.1) rotate(5deg); } /* A 70% du temps */
+	100% { opacity: 1; transform: scale(1) rotate(0deg); } /* Au bour des 0.25 s */
+}
+
+/* ANIMATION D'EXPLOSION */
+.target.explode {
+	animation: explosionCible 0.4s forwards; /* Joue l'animation "explosionCible", d'une durée de 0.4s, et reste dans l'état final (sinon, revient dans l'état initial) */
+}
+
+/* ANIMATION D'EXPLOSION - EXPLOSIONCIBLE */
+@keyframes explosionCible {
+	0% { transform: scale(1); opacity: 1; } /* Au départ */
+	100% { transform: scale(0.2); opacity: 0; } /* Au bout des 0.4 s => se réduit et disparait (transparence) */
+}
+
+/* ANIMATION D'EXPLOSION - HALO */
+.target.explode::after { /* On cible un élément avec les classes target et explode et on crée un psudo-élément juste après */
+	content: ""; /* Obligatoire pour que "after" existe */
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: -20px; /* Décalage de l'explosion vers le haut (100 px taille explosion - 60 px taille cible) / 2 */
+	left: -20px; /* Idem pour le décalage latéral */
+	border-radius: 50%; /* Pour avoir une explosion en forme de cercle */
+	background: radial-gradient(circle, yellow, orange, transparent 70%); /* Dégradé : centre jaune, puis orange, et disparition (tranparences) progressive */
+	animation: explosionHalo 0.4s forwards; /* Joue l'animation "explosionHalo", d'une durée de 0.4s, et reste dans l'état final (sinon, revient dans l'état initial) */
+}
+
+/* ANIMATION D'EXPLOSION - HALO - EXPLOSION HALO */
+@keyframes explosionHalo {
+	0% { transform: scale(0.5); opacity: 1; } /* Au départ */
+	100% { transform: scale(2); opacity: 0; } /* Au bout des 0.4 s => augmente de taille et disparait (transparence) */
+}
+
+/* ! OVERLAY - FENÊTRE DES SCORES */
+#overlay {
+	position: fixed;
+	inset: 0; /* Pour coller aux 4 bords de l'élément : top = 0 right = 0 left = 0 bottom = 0 */
+	display: grid; /* On transforme en grid pour centrer facilement les éléments */
+	justify-items: center;
+	align-items: center;
+	background: rgba(0,0,0,0.6);
+	z-index: 9999; /* Pour être certain que l'overlay apparaisse au-dessus (devant le reste) */
+	text-align: center;
+}
+
+#overlay.hidden { display: none; } /* Permet de cacher l'overlay si la classe lui est appliquée */
+
+/* TEXTE DE L'OVERLAY */
+#panel {
+	background: white;
+	padding: 20px 24px;
+	border-radius: 12px;
+	min-width: 260px;
+	text-align: center;
+}
+
+/* BOUTON POUR CONTINUER ET PASSER AU NIVEAU SUIVANT */
+#btnContinue{
+	display: inline-flex; /* Se comporte comme un span (et non un div) mais est géré en flex */
+	align-items: center;
+	justify-content: center;
+	padding: 10px 14px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+/* ! DIVERS */
+
+/* NE PAS FAIRE APPARAITRE LE CURSEUR LORS DU CLIC */
+#sceneJeu, .target {
+	user-select: none; /* Empêche la sélection du texte à la souris */
+}
+
+
