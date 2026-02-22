@@ -1,0 +1,15 @@
+body {
+    margin:0;
+    background-color: black;
+}
+
+#scene {
+    width:100%;
+    height:100vh;
+    position:absolute;
+}
+
+.creature {
+    position:absolute;
+    border-radius:50%;
+}
