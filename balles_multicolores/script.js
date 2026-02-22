@@ -84,7 +84,7 @@ const updateInterval = 1000 / updateFrequency;
 setInterval(updateScene, updateInterval);
 
 const creature = [];
-const Nb = 80;
+const Nb = 30;
 for (let i = 0 ; i < Nb ; i++) {
     creature[i] = addCreature({
         speedX:8 * Math.random(),
